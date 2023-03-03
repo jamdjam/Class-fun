@@ -283,7 +283,7 @@ while __name__ == "__main__":
 
     choice = str(input("1. Fight  ||  2. Consumables  ||  3.market\n"))
     if choice == "1":
-        enemy = wolf(b1.lvl)
+        enemy = wolf()
         enemy.perLvl()
         fight()
     elif choice == "2":

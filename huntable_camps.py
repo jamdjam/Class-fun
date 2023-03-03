@@ -1,7 +1,7 @@
 import random
 
 class wolf:
-    def __init__(self, plyrLvl):
+    def __init__(self):
 
         self.lvl = random.randrange(1, 4)
 

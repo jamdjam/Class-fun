@@ -170,7 +170,7 @@ class shop:
         self.items = [{"ID" : 1, "name" : "Enchanted Note", "cost" : 300, "stats" :  {"ap" : 25, "hp" : 40}, "sell" : 175, "applied" : "no"},
                     {"ID" : 2, "name" : "Warped Jade Stone" , "cost" : 450, "stats" : {"arm" : 15, "mr" : 15}, "sell" : 200, "applied" : "no"},
                     {"ID" : 3, "name" : "Splintered Club" , "cost" : 350, "stats" : {"ad" : 20, "hp" : 50}, "sell" : 185, "applied" : "no"},
-                    {"ID" : 4, "name" : "Eyed Pendant" , "cost" : 1100, "stats" : {"ap" : 15, "mr" : 15}, "sell" : 200, "applied" : "no"}]
+                    {"ID" : 4, "name" : "Eyed Pendant" , "cost" : 1100, "stats" : {"ap" : 45, "mr" : 15, "ad": 20}, "sell" : 200, "applied" : "no"}]
 
         self.consumables = [{"ID" : 1, "name": "Health Potion", "cost" : 75}]
 
@@ -251,7 +251,7 @@ def fight():
             b1.xp += enemy.xpReturn
             b1.gold += enemy.goldReturn
             os.system("cls")
-            input("Congratulations, {} has beat {}! {} has received {}XP!\nPress enter to continue ".format(b1.name, enemy.name, b1.name, enemy.xpReturn))
+            input("Congratulations, {} has beat {}! {} has received {} gold and {}XP!\nPress enter to continue ".format(b1.name, enemy.name, b1.name, enemy.goldReturn, enemy.xpReturn))
             b1.xpCheck()
             break
  

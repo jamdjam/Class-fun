@@ -2,21 +2,29 @@ import random
 
 class wolf:
     def __init__(self):
+    
+        self.lvl = None
 
-        self.lvl = random.randrange(1, 4)
+        self.name = None
+        self.maxHP = None #max health used to print health bar
+        self.hp = None #health points
+        self.ad = None #attack damage
+        self.ap = None #ability power
+        self.arm = None #armour
+        self.mr = None #Magic Resist
 
-        self.name = "Bella Wolf"
-        self.maxHP = 228 #max health used to print health bar
-        self.hp = 228 #health points
-        self.ad = 18 #attack damage
-        self.ap = 9 #ability power
-        self.arm = 21 #armour
-        self.mr = 21 #Magic Resist
+        self.xpReturn = None #XP returned to the player character
+        self.goldReturn = None #gold returned to the player
 
-        self.xpReturn = 65 #XP returned to the player character
-        self.goldReturn = 30 #gold returned to the player
+        self.Attacks = [{}]
 
-        self.Attacks = [{"movID" : 1, "Name" : "Gash", "Dmg" : 0.9, "Type" : "AD"}]
+        self.hpPerLvl = None 
+        self.adPerLvl = None
+        self.apPerLvl = None
+        self.armPerLvl = None
+        self.mrPerLvl = None
+        self.xpPerLvl = None
+        self.goldPerLvl = None
 
     def attacksReturn(self):
         return(self.Attacks)
@@ -43,27 +51,16 @@ class wolf:
         .format(self.name, self.lvl, self.HPBar(self.hp, self.maxHP), self.ad, self.ap, self.arm, self.mr))
 
     def perLvl(self):
-        hpPerLvl = 32
-
-        adPerLvl = 9
-        apPerLvl = 8
-        armPerLvl = 7
-        mrPerLvl = 6
-        xpPerLvl = 16
-        goldPerLvl = 15
-
-
-
         for i in range(1, self.lvl, 1):
-            self.maxHP += hpPerLvl
-            self.hp += hpPerLvl
-            self.ad += adPerLvl
-            self.ap += apPerLvl
-            self.arm += armPerLvl
-            self.mr += mrPerLvl
+            self.maxHP += self.hpPerLvl
+            self.hp += self.hpPerLvl
+            self.ad += self.adPerLvl
+            self.ap += self.apPerLvl
+            self.arm += self.armPerLvl
+            self.mr += self.mrPerLvl
 
-            self.goldReturn += goldPerLvl
-            self.xpReturn += xpPerLvl
+            self.goldReturn += self.goldPerLvl
+            self.xpReturn += self.xpPerLvl
 
     def damage_multiplier_AD(self):
         if self.arm >= 0:
@@ -78,3 +75,33 @@ class wolf:
         else:
             multipler = 2 - (100/(100-self.mr))
         return (multipler)
+
+
+
+class wolfEasy(wolf):
+    def __init__(self, ):
+
+        self.lvl = random.randrange(1, 4)
+
+        self.name = "Bella Wolf"
+        self.maxHP = 228 #max health used to print health bar
+        self.hp = 228 #health points
+        self.ad = 18 #attack damage
+        self.ap = 9 #ability power
+        self.arm = 21 #armour
+        self.mr = 21 #Magic Resist
+
+        self.xpReturn = 65 #XP returned to the player character
+        self.goldReturn = 30 #gold returned to the player
+
+        self.Attacks = [{"movID" : 1, "Name" : "Gash", "Dmg" : 0.9, "Type" : "AD"}]
+
+        self.hpPerLvl = 27
+        self.adPerLvl = 7
+        self.apPerLvl = 3
+        self.armPerLvl = 6
+        self.mrPerLvl = 6
+        self.xpPerLvl = 15
+        self.goldPerLvl = 15
+
+

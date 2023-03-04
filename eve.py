@@ -1,5 +1,5 @@
 import os
-from huntable_camps import wolf
+from huntable_camps import wolfEasy
 
 
 
@@ -283,7 +283,7 @@ while __name__ == "__main__":
 
     choice = str(input("1. Fight  ||  2. Consumables  ||  3.market\n"))
     if choice == "1":
-        enemy = wolf()
+        enemy = wolfEasy()
         enemy.perLvl()
         fight()
     elif choice == "2":

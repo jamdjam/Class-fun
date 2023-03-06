@@ -229,15 +229,23 @@ def fight():
         enemy.printStats()
         b1.printStats()
         moves = b1.attacksReturn()
+        
+        movIDs = []
 
         for move in moves: #Shows the player their selection of moves 
             print(str(move["movID"]), move["Name"])
+            movIDs.append(move["movID"])
             print("Damage: {} / {}".format(move["Dmg"], move["Type"]))
 
-        i = input("please select a move! ")
+        i = None
+        while i not in movIDs:
+            x = input("please select a move! ")
+            if x.isdigit():
+                i = int(x)
+            else: print("Please input a move Number")
 
         for move in moves: #goes through moves in characters dicttionary to find one selected by the user
-            if i == str(move["movID"]):
+            if i == move["movID"]:
                 if move["Type"] == "AD":
                     dmgNum = (move["Dmg"] * b1.ad)
                     multiplier = enemy.damage_multiplier_AD() #NEED TO TEST IF THESE ARE ACTUALLY WORKING, I cant be bothered atm

@@ -1,7 +1,6 @@
 import os
 from huntable_camps import wolfEasy
-
-
+from map import Map
 
 
 class eve:
@@ -213,15 +212,18 @@ class shop:
             print("{}. {} (Cost : {})  || Stats: {}".format(str(item["ID"]), item["name"], item["cost"], item["stats"]))
         x = input("\nPlease select an item you would like to purchase! ")
         for item in self.items:
-            if str(item["ID"]) == x:
-                b1.Items.append(item)
-                b1.gold -= item["cost"]
-                self.items.pop(item["ID"] - 1)
+            if g >= item["cost"]:
+                if str(item["ID"]) == x:
+                    b1.Items.append(item)
+                    b1.gold -= item["cost"]
+                    self.items.pop(item["ID"] - 1)
+
 
         b1.StatApp()
 
 b1 = eve("Sarala")
 store = shop()
+explore = Map()
 
 def fight():
     while b1.hp > 0 and enemy.hp > 0:
@@ -283,8 +285,6 @@ def fight():
             input("You must return and heal!\nPress enter to continue!")
 
 
-
-
 while __name__ == "__main__":
     os.system("cls")
     b1.printStats()
@@ -298,5 +298,8 @@ while __name__ == "__main__":
         b1.Applicables()
     elif choice == "3":
         store.shopChoice()
+    elif choice == "4":
+        explore.lvlCheck(b1.lvl)
+        explore.areaP()
 
 

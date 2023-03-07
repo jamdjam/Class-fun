@@ -211,12 +211,14 @@ class shop:
         for item in self.items:
             print("{}. {} (Cost : {})  || Stats: {}".format(str(item["ID"]), item["name"], item["cost"], item["stats"]))
         x = input("\nPlease select an item you would like to purchase! ")
+        ind = 0
         for item in self.items:
             if g >= item["cost"]:
                 if str(item["ID"]) == x:
                     b1.Items.append(item)
                     b1.gold -= item["cost"]
-                    self.items.pop(item["ID"] - 1)
+                    self.items.pop(ind)
+            ind += 1
 
 
         b1.StatApp()

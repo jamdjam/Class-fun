@@ -6,9 +6,11 @@ class Map:
 
     def lvlCheck(self, playerlevel):
         for area in self.allAreas:
+            ind = 0
             if playerlevel >= area["lvlreq"]:
                 self.explorableareas.append(area)
-                self.allAreas.pop(area["id"] - 1)
+                self.allAreas.pop(ind)
+            ind += 1
     
 
     def areaP(self):

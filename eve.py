@@ -245,7 +245,7 @@ def fight():
         while i not in movIDs:
             x = input("please select a move! ")
             if x.isdigit():
-                i = int(x)
+                i = int(x) #comment
             else: print("Please input a move Number")
 
         for move in moves: #goes through moves in characters dicttionary to find one selected by the user

@@ -79,7 +79,7 @@ class wolf:
 
 
 class wolfEasy(wolf):
-    def __init__(self, ):
+    def __init__(self):
 
         self.lvl = random.randrange(1, 4)
 

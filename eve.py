@@ -1,6 +1,6 @@
 import os
 from huntable_camps import wolfEasy
-from map import Map
+from map import *
 
 
 class eve:
@@ -226,6 +226,7 @@ class shop:
 b1 = eve("Sarala")
 store = shop()
 explore = Map()
+area1 = weird_woods()
 
 def fight():
     while b1.hp > 0 and enemy.hp > 0:

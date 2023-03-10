@@ -1,3 +1,5 @@
+from huntable_camps import wolf, wolfEasy
+
 class Map:
     def __init__(self):
         self.explorableareas = []
@@ -17,3 +19,9 @@ class Map:
         print(self.explorableareas)
         print(self.allAreas)
         input()
+
+class weird_woods:
+    def __init__(self):
+        None
+
+        

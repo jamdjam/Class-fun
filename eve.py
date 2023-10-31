@@ -143,6 +143,9 @@ class eve:
                     elif stat == "ad":
                         self.ad += item["stats"]["ad"]
                         item["applied"] = "yes"
+                    elif stat == "maxHP":
+                        self.maxHP += item["stats"]["maxHP"]
+                        item["applied"] = "yes"
                     elif stat == "hp":
                         self.hp += item["stats"]["hp"]
                         item["applied"] = "yes"
@@ -166,9 +169,9 @@ class eve:
 
 class shop:
     def __init__(self):
-        self.items = [{"ID" : 1, "name" : "Enchanted Note", "cost" : 300, "stats" :  {"ap" : 25, "hp" : 40}, "sell" : 175, "applied" : "no"},
+        self.items = [{"ID" : 1, "name" : "Enchanted Note", "cost" : 300, "stats" :  {"ap" : 25, "hp" : 40, "maxHP" : 40}, "sell" : 175, "applied" : "no"},
                     {"ID" : 2, "name" : "Warped Jade Stone" , "cost" : 450, "stats" : {"arm" : 15, "mr" : 15}, "sell" : 200, "applied" : "no"},
-                    {"ID" : 3, "name" : "Splintered Club" , "cost" : 350, "stats" : {"ad" : 20, "hp" : 50}, "sell" : 185, "applied" : "no"},
+                    {"ID" : 3, "name" : "Splintered Club" , "cost" : 350, "stats" : {"ad" : 20, "hp" : 50, "maxHP" : 50}, "sell" : 185, "applied" : "no"},
                     {"ID" : 4, "name" : "Eyed Pendant" , "cost" : 1100, "stats" : {"ap" : 45, "mr" : 15, "ad": 20}, "sell" : 200, "applied" : "no"}]
 
         self.consumables = [{"ID" : 1, "name": "Health Potion", "cost" : 75}]
